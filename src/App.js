@@ -18,7 +18,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/checkout" component={Checkout} />
-
+            <Route path="/Admin" component={Admin} />
       
               <div class="container">
                 <div class="row">
@@ -29,13 +29,10 @@ function App() {
                     <Carousel />
                     <Home />
                   </div>
-        
                 </div>
-              </div>
-            <Footer />
-    
-            <Route path="/Admin" component={Admin} />
+              </div>    
           </Switch>
+          <Footer /> 
       </div>
     </Router>
   );
