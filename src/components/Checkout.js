@@ -1,15 +1,17 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../index.css';
 
-
-let CheckoutPage = () => <div><h2>This is the Checkout!</h2></div>
-
-let Checkout = () => (
-    <div>
-        <Route path="/Checkout" component={CheckoutPage} />
+function Checkout () {
+    return (
+        <div>
+        <h2>Checkout page</h2>
+        <h2>Checkout page</h2>
+        <h2>Checkout page</h2>
+        <h2>Checkout page</h2>
     </div>
-)
 
-
+    )
+}
+    
 export default Checkout;
