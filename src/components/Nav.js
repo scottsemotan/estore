@@ -29,6 +29,11 @@ function Nav() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to={"/register-login"}>
+                  Register/Login
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to={"/checkout"}>
                   Checkout
                 </Link>
