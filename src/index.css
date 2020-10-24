@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.navbar.fixed-bottom {
+.navbar.foot {
   display: flex;
   justify-content: space-around;
   align-items: center;
