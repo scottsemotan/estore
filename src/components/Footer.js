@@ -1,11 +1,11 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../index.css';
 
-let Footer = () => (
-    <div>
-        <h1> This is the footer!</h1>
-    </div>
+const Footer = () => (
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <a class="navbar-brand">Hey It's a Nav Bar at the bottom</a>
+    </nav>
 )
 
 
