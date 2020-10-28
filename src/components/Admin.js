@@ -16,7 +16,7 @@ function AdminPage() {
     let newProduct = {
       product_name: e.target.product.value,
       description: e.target.description.value,
-      photo: e.target.photo.value,
+      product_photo: e.target.photo.value,
       price: e.target.price.value,
       quantity: e.target.quantity.value,
     }
