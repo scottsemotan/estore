@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Admin from './components/Admin';
-import RegisterLoginPage from './components/RegisterLoginPage/RegisterLogin'
+import RegisterLoginPage from './components/RegisterLogin'
 import Checkout from './components/Checkout';
 import LeftSide from './components/LeftSide';
 import Carousel from './components/Carousel';
