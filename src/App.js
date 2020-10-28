@@ -4,13 +4,18 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Admin from './components/Admin';
+import RegisterLoginPage from './components/RegisterLoginPage/RegisterLogin'
 import Checkout from './components/Checkout';
 import LeftSide from './components/LeftSide';
 import Carousel from './components/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
+
+  
+  
   return (
     <Router>
       <div className="App">
@@ -19,13 +24,14 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/Admin" component={Admin} />
-      
-              <div class="container">
-                <div class="row">
+            <Route path="/register-login" component={RegisterLoginPage} />
+
+              <div className="container">
+                <div className="row">
                   <div className="col-lg-3">
                     <LeftSide />
                   </div>
-                  <div class="col-lg-9">
+                  <div className="col-lg-9">
                     <Carousel />
                     <Home />
                   </div>

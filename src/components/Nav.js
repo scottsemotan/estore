@@ -6,7 +6,7 @@ import "../index.css";
 function Nav() {
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+        <div className="container">
           <a className="navbar-brand" href="#">
             Our Shop
           </a>
@@ -26,6 +26,11 @@ function Nav() {
               <li className="nav-item active">
                 <Link className="nav-link" to={"/home"}>
                   Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/register-login"}>
+                  Register/Login
                 </Link>
               </li>
               <li className="nav-item">
