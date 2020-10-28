@@ -6,7 +6,7 @@ import "../index.css";
 function Nav() {
   return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+        <div className="container">
           <a className="navbar-brand" href="#">
             Our Shop
           </a>
