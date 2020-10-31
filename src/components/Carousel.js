@@ -92,7 +92,7 @@ let SlideShow = () =>
                     
                 </Carousel.Caption>
             </Carousel.Item>
-            
+             
         </Carousel>
 
 

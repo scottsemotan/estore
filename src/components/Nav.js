@@ -40,7 +40,7 @@ function Nav() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={"/Admin"}>
-                  Admin Only 
+                  Admin Only  
                 </Link>
               </li>
             </ul>

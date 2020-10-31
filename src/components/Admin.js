@@ -85,7 +85,7 @@ function AdminPage() {
             <Form.Control onChange={handleChange} type="text" placeholder="Qty" id="quantity" />
           </Col>
         </Form.Group>
-
+ 
         <Form.Group as={Row} className="form">
           <Col sm={{ span: 10, offset: 2 }}>
             <Button type="submit" >Add Product</Button>
