@@ -11,6 +11,7 @@ const LeftSide = () => (
     </div>
 )
 
+
 export default LeftSide;
 
 
