@@ -8,7 +8,7 @@ function Nav() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <a className="navbar-brand" href="#">
-            Our Shop
+            Welcome To Our Shop!
           </a>
           <button
             className="navbar-toggler"
@@ -36,6 +36,11 @@ function Nav() {
               <li className="nav-item">
                 <Link className="nav-link" to={"/checkout"}>
                   Checkout
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/Admin"}>
+                  Admin Only
                 </Link>
               </li>
             </ul>

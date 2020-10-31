@@ -41,7 +41,7 @@ function AdminPage() {
       <h3>Add Inventory</h3>
       <br />
       <Form onSubmit={handleSubmit}>
-        <Form.Group as={Row} >
+        <Form.Group as={Row} className="form">
           <Form.Label column sm={2}>
             Product Name
             </Form.Label>
@@ -50,7 +50,7 @@ function AdminPage() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} >
+        <Form.Group as={Row} className="form">
           <Form.Label column sm={2}>
             Product Description
             </Form.Label>
@@ -59,7 +59,7 @@ function AdminPage() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row}>
+        <Form.Group as={Row} className="form">
           <Form.Label column sm={2}>
             Product Photo
             </Form.Label>
@@ -68,7 +68,7 @@ function AdminPage() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} >
+        <Form.Group as={Row} className="form">
           <Form.Label column sm={2}>
             Price
             </Form.Label>
@@ -77,7 +77,7 @@ function AdminPage() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} >
+        <Form.Group as={Row} className="form">
           <Form.Label column sm={2}>
             Quantity
   </Form.Label>
@@ -86,7 +86,7 @@ function AdminPage() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row}>
+        <Form.Group as={Row} className="form">
           <Col sm={{ span: 10, offset: 2 }}>
             <Button type="submit" >Add Product</Button>
           </Col>

@@ -18,3 +18,24 @@ code {
   align-items: center;
 }
 
+.App {
+  background-image: radial-gradient(blue, rgb(138, 138, 233));
+  
+}
+
+.form-group {
+  margin: auto;
+}
+
+.form {
+  margin-top: 1%;
+}
+
+.container {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.button {
+  margin-top: 1%;
+}
