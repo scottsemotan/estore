@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
@@ -6,10 +6,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 
 function AdminPage() {
 
-  
+
+  //Function handle submit bitton to add product to inventory list 
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -26,14 +28,44 @@ function AdminPage() {
       {
         body: JSON.stringify(newProduct),
         method: 'POST',
-        headers: {'Content-Type': 'application/json'}
+        headers: { 'Content-Type': 'application/json' }
       })
-      
   }
 
-  function handleChange(event) {
 
+  function handleChange(event) {
   };
+
+  //function to load our inventory list on the admin page so the admin can edit or delete product
+
+  function componentDidMount() {
+    
+    fetch('http://localhost:4000/inventory',
+      {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => response.json())
+      .then(product => console.log(product))
+    }
+
+  componentDidMount();
+
+
+
+  const [products, setProducts] = useState({
+    product_name: '',
+    description: '',
+    product_photo: '',
+    price: '',
+    quantity: '',
+  });
+
+  //function to GET our inventory list on the admin page
+  
+    
+    
+
 
   return (
     <Container>
@@ -92,6 +124,13 @@ function AdminPage() {
           </Col>
         </Form.Group>
       </Form>
+
+      <Row id="products">
+        <ul>
+          <li></li>
+        </ul>
+
+      </Row>
 
     </Container>
   );
