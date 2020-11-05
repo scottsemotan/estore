@@ -5,7 +5,7 @@ import '../index.css';
 
 const Footer = () => (
     <nav class="foot navbar navbar-dark bg-dark">
-        <a class="navbar-brand">Hey It's a Nav Bar at the bottom</a>
+        <a class="navbar-brand"></a>
         <Link className="nav-link" to={"/Admin"}>
                   Admin Only
         </Link>

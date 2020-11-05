@@ -6,9 +6,6 @@ function Checkout () {
     return (
         <div>
         <h2>Checkout page</h2>
-        <h2>Checkout page</h2>
-        <h2>Checkout page</h2>
-        <h2>Checkout page</h2>
     </div>
 
     )

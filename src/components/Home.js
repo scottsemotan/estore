@@ -1,171 +1,65 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../index.css";
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns'
 
-const Home = () => (
-  <div class="row">
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <img
-            className="card-img-top"
-            src="http://placehold.it/700x400"
-            alt=""
-          />
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">Item One</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-            numquam aspernatur!
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">
-            &#9733; &#9733; &#9733; &#9733; &#9734;
-          </small>
-        </div>
-      </div>
-    </div>
 
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <img
-            className="card-img-top"
-            src="http://placehold.it/700x400"
-            alt=""
-          />
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">Item Two</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-            numquam aspernatur! Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">
-            &#9733; &#9733; &#9733; &#9733; &#9734;
-          </small>
-        </div>
-      </div>
-    </div>
+function HomePage() {
+//function to load our inventory list on the admin page so the admin can edit or delete product
+const [products, setProducts] = useState(false);
 
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <img
-            className="card-img-top"
-            src="http://placehold.it/700x400"
-            alt=""
-          />
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">Item Three</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-            numquam aspernatur!
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">
-            &#9733; &#9733; &#9733; &#9733; &#9734;
-          </small>
-        </div>
-      </div>
-    </div>
+useEffect(() => {
+  const apiUrl = `http://localhost:4000/inventory`;
+  fetch(apiUrl)
+    .then((res) => res.json())
+    .then((product) => {
+      setProducts({ product: product });
+    });
+}, [setProducts]);
 
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <img
-            className="card-img-top"
-            src="http://placehold.it/700x400"
-            alt=""
-          />
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">Item Four</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-            numquam aspernatur!
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">
-            &#9733; &#9733; &#9733; &#9733; &#9734;
-          </small>
-        </div>
-      </div>
-    </div>
+console.log(products);
 
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <img
-            className="card-img-top"
-            src="http://placehold.it/700x400"
-            alt=""
-          />
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">Item Five</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-            numquam aspernatur! Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">
-            &#9733; &#9733; &#9733; &#9733; &#9734;
-          </small>
-        </div>
-      </div>
-    </div>
+const items = []
 
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <img
-            className="card-img-top"
-            src="http://placehold.it/700x400"
-            alt=""
-          />
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">Item Six</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-            numquam aspernatur!
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">
-            &#9733; &#9733; &#9733; &#9733; &#9734;
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+if (products) {
+  products.product.forEach((item) => {
+    if( item.is_deleted !== true)
+    items.push(
+      <Col className="col-lg-3 col-xs-8">
+      <Card key={item.id} style={{ width: '18rem' }}>
+        <Card.Img variant="top" style={{ width: '18rem' }} src={item.product_photo} />
+        <Card.Body>
+          <Card.Title>{item.product_name}</Card.Title>
+          <Card.Text>
+            ${item.price}
+          </Card.Text>
+          <Button variant="primary" onclick="">Details</Button>
+          <Button variant="primary" onclick="">Add To Cart</Button>
+        </Card.Body>
+      </Card>
+      </Col>
+    )
+  })
+}
 
-export default Home;
+
+
+return (
+<Row>
+<CardColumns>
+  {items}
+</CardColumns>
+</Row>
+
+)
+
+
+
+}
+
+export default HomePage;

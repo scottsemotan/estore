@@ -18,7 +18,7 @@ function Register() {
     const [state, setArea] = useState("");
     const [zip, setZip] = useState("");
 
-    //const [auth, setAuth] = useState(false)
+    const history = useHistory();
 
     //get response from '/login' route from backend index.js
     function handleSubmit(event) {
@@ -31,8 +31,19 @@ function Register() {
             state: state, 
             zip: zip
         })
-    }
+        .then((response) => {
+          console.log(response);
+          if (response.data == 'Ok') {
+              alert("You have successfully registered, please log in.")
+              history.push('/Login');
 
+          } else {
+              alert("Please fill out registration form completely & re-submit.");
+              history.push('/Login');
+          }
+    })
+    event.preventDefault();
+  }
     
     return (
 <Col className="col-6">
