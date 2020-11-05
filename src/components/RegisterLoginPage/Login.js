@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Axios from 'axios';
 
@@ -25,10 +24,12 @@ function Login() {
                 //and use history.push to route user to desired page
                 if (response.data !== 'Invalid Credentials') {
                     localStorage.setItem('token', JSON.stringify(response));
-                    history.push('/Checkout');
+                    alert("You have successfully logged in!")
+                    history.push('/home');
+
                 } else {
                     alert("Please enter valid credentials");
-                    history.push('/Login');
+                    history.push('/register-login');
                 }
 
             })

@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-let UserPage = () => <div><h2>This is the User page!</h2></div>
+function UserPage() {
+
+
+return(
+
+
+
+<div><h2>This is the User page!</h2></div>
+
+)
+
+
+} 
+
 
 let User = () => (
     <div>
